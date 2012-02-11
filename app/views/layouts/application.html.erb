@@ -42,13 +42,21 @@
 			</div>
 		</div>
 	</div>
+	 
 
 	<%- flash.each do |k, v| %>
-		<div class="alert alert-success fade in <%= k %>"><a href="#" data-dismiss="alert" class="close">&#215;</a><%= v %></div>
+		<div class="alerts alert-success fade in <%= k %>"><a href="#" data-dismiss="alert" class="close">&#215;</a><%= v %></div>
 	<% end %>
 
 	<div id="main">
 		<%= yield %>
 	</div>
+	<script type="text/javascript">		 
+		$(function(){
+			$('#myTab').tab('show');
+			
+			$('#myModal').modal(options);
+		}); 		
+	</script>
 </body>
 </html>

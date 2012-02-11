@@ -3,11 +3,10 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.1'  
 gem 'heroku'
 gem "eventmachine", "~> 1.0.0.beta.4.1"
-gem 'thin'  
-gem "formtastic", "~> 2.1.0.beta1"
+gem 'thin'   
 gem 'devise'  
 gem 'activeadmin'  
-gem 'friendly_id'  
+gem 'friendly_id'   
 
 gem 'jquery-rails'
  

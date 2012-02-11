@@ -168,7 +168,6 @@ DEPENDENCIES
   coffee-rails (~> 3.2.2)
   devise
   eventmachine (~> 1.0.0.beta.4.1)
-  formtastic (~> 2.1.0.beta1)
   friendly_id
   heroku
   jquery-rails

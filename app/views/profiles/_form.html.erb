@@ -1,101 +1,136 @@
-<%= form_for([@user, @profile], :html => { :class => "well form-horizontal" }) do |f| %>
-  <% if @profile.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+<div class="tab-pane active" id="profile">
+		<div class="control-group">
+			<%= f.label :photos %>
+			<div class="controls">
+			<%= f.text_field :photos %> 
+			</div>
+		</div>
 
-      <ul>
-      <% @profile.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-  
-	<div class="control-group">
-    <%= f.label :height %>
-		<div class="controls">
-			<%= f.text_field :height %> 
+	<!-- if female, display female form -->
+	<% if current_user.gender == "female" %>
+		<div class="control-group">
+			<%= f.label :photos %>
+			<div class="controls">
+			<%= f.text_field :photos %> 
+			</div>
 		</div>
-	</div>
+
+		<div class="control-group">
+			<%= f.label :height %>
+			<div class="controls">
+				<%= f.text_field :height %> 
+			</div>
+		</div>
+			
+		<div class="control-group">
+			<%= f.label :bust %>
+			<div class="controls">
+			<%= f.text_field :bust %> 
+			</div>
+		</div>
+			
+		<div class="control-group">
+			<%= f.label :waist %>
+			<div class="controls">
+			<%= f.text_field :waist %> 
+			</div>
+		</div>
+
+		<div class="control-group">
+			<%= f.label :hips %>
+			<div class="controls">
+			<%= f.text_field :hips %> 
+			</div>
+		</div>
+
+		<div class="control-group">
+			<%= f.label :shoes %>
+			<div class="controls">
+			<%= f.text_field :shoes %> 
+			</div>
+		</div>
+
+		<div class="control-group">
+			<%= f.label :eyes %>
+			<div class="controls">
+			<%= f.text_field :eyes %> 
+			</div>
+		</div>
+
+		<div class="control-group">
+			<%= f.label :hair %>
+			<div class="controls">
+			<%= f.text_field :hair %> 
+			</div>
+		</div>
+
+	<!-- if not female, then display male form -->
+	<% else %>
+
+		<div class="control-group">
+			<%= f.label :height %>
+			<div class="controls">
+				<%= f.text_field :height %> 
+			</div>
+		</div> 
 		
-	<div class="control-group">
-    <%= f.label :bust %>
-		<div class="controls">
-    <%= f.text_field :bust %> 
+		<div class="control-group">
+			<%= f.label :suit %>
+			<div class="controls">
+			<%= f.text_field :suit %> 
+			</div>
 		</div>
-	</div>
+			
+		<div class="control-group">
+			<%= f.label :waist %>
+			<div class="controls">
+			<%= f.text_field :waist %> 
+			</div>
+		</div>
 		
+		<div class="control-group">
+			<%= f.label :inseam %>
+			<div class="controls">
+			<%= f.text_field :inseam %> 
+			</div>
+		</div>  
+
+		<div class="control-group">
+			<%= f.label :shoes %>
+			<div class="controls">
+			<%= f.text_field :shoes %> 
+			</div>
+		</div>
+
+		<div class="control-group">
+			<%= f.label :eyes %>
+			<div class="controls">
+			<%= f.text_field :eyes %> 
+			</div>
+		</div>
+
+		<div class="control-group">
+			<%= f.label :hair %>
+			<div class="controls">
+			<%= f.text_field :hair %> 
+			</div>
+		</div>	
+		
+	<% end %>
+</div>
+
+<div class="tab-pane" id="contact">
 	<div class="control-group">
-    <%= f.label :waist %>
+		<%= f.label :phone %>
 		<div class="controls">
-    <%= f.text_field :waist %> 
+		<%= f.text_field :phone %> 
 		</div>
 	</div>
-	
+
 	<div class="control-group">
-    <%= f.label :hips %>
+		<%= f.label :facebook %>
 		<div class="controls">
-    <%= f.text_field :hips %> 
+		<%= f.text_field :facebook %> 
 		</div>
 	</div>
-	
-	<div class="control-group">
-    <%= f.label :shoes %>
-		<div class="controls">
-    <%= f.text_field :shoes %> 
-		</div>
-	</div>
-	
-	<div class="control-group">
-    <%= f.label :eyes %>
-		<div class="controls">
-    <%= f.text_field :eyes %> 
-		</div>
-	</div>
-	
-	<div class="control-group">
-    <%= f.label :hair %>
-		<div class="controls">
-    <%= f.text_field :hair %> 
-		</div>
-	</div>
-	
-	<div class="control-group">
-    <%= f.label :phone %>
-		<div class="controls">
-    <%= f.text_field :phone %> 
-		</div>
-	</div>
-	
-	<div class="control-group">
-    <%= f.label :facebook %>
-		<div class="controls">
-    <%= f.text_field :facebook %> 
-		</div>
-	</div>
-	
-	<div class="control-group">
-    <%= f.label :suit %>
-		<div class="controls">
-    <%= f.text_field :suit %> 
-		</div>
-	</div>
-	
-	<div class="control-group">
-    <%= f.label :inseam %>
-		<div class="controls">
-    <%= f.text_field :inseam %> 
-		</div>
-	</div>
-	
-	<div class="control-group">
-    <%= f.label :photos %>
-		<div class="controls">
-    <%= f.text_field :photos %> 
-		</div>
-	</div>
-	
-  <div class="form-actions">
-    <%= f.submit "Submit", :class => "btn btn-primary" %>
-  </div>
-<% end %>
+</div>
