@@ -8,12 +8,6 @@
 
 	<!-- if female, display female form -->
 	<% if current_user.gender == "female" %>
-		<div class="control-group">
-			<%= f.label :photos %>
-			<div class="controls">
-			<%= f.text_field :photos %> 
-			</div>
-		</div>
 
 		<div class="control-group">
 			<%= f.label :height %>

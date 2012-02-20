@@ -8,5 +8,5 @@ Zenmodels::Application.routes.draw do
 	end 
 	
 	root :to => 'home#index'  
-	match '/:id' => 'users#show'
+	match '/:id' => 'users#show', :as => "user_path"
 end
